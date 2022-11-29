@@ -14,10 +14,8 @@ instead encode the marking in a representation that’s readable for the program
 */
 
 interface MarkedGuess {
-    guessedWord: string,
-    correctPlace: string,
-    wrongPlace: string,
-    wrong: string
+    status: "correct"|"half-correct" | "wrong",
+    letter: string
 
 }
 const target = ["b", "r", "o", "w", "n"]
@@ -32,4 +30,6 @@ function IsItInTarget(guess: string[], target: string[]): string[] {
         }
         return verifiedLetters
 }
+function markWordleGuess(guess: string, hiddenTarget: string):MarkedGuess[] {
+    
 }
